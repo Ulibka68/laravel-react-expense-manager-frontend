@@ -22,7 +22,8 @@ export default class EditExpense extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://laravel-react-expense-manager.herokuapp.com/api/expenses/' + this.props.match.params.id)
+    // axios.get('https://laravel-react-expense-manager.herokuapp.com/api/expenses/' + this.props.match.params.id)
+    axios.get('http://expense-manage/expenses/' + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,

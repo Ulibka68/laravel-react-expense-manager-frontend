@@ -14,7 +14,8 @@ export default class ExpenseList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://laravel-react-expense-manager.herokuapp.com/api/expenses/')
+    // axios.get('https://laravel-react-expense-manager.herokuapp.com/api/expenses/')
+    axios.get('http://expense-manage/expenses/')
       .then(res => {
         this.setState({
           expenses: res.data
