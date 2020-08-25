@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import axios from 'axios'
 import ExpensesList from './expenses-listing.component';
 import Swal from 'sweetalert2';
+import {serverRequestPath} from "./server";
 
 
 export default class CreateExpense extends Component {
@@ -46,7 +47,7 @@ export default class CreateExpense extends Component {
             description: this.state.description
         };
         // axios.post('https://laravel-react-expense-manager.herokuapp.com/api/expenses/', expense)
-        axios.post('http://expense-manage/expenses/', expense)
+        axios.post(serverRequestPath, expense)
             .then(res => console.log(res.data));
         // console.log(`Expense successfully created!`);
         // console.log(`Name: ${this.state.name}`);

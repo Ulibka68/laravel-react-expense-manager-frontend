@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import ExpenseTableRow from './ExpenseTableRow';
+import {serverRequestPath} from "./server";
 
 
 export default class ExpenseList extends Component {
@@ -15,7 +16,7 @@ export default class ExpenseList extends Component {
 
   componentDidMount() {
     // axios.get('https://laravel-react-expense-manager.herokuapp.com/api/expenses/')
-    axios.get('http://expense-manage/expenses/')
+    axios.get(serverRequestPath)
       .then(res => {
         this.setState({
           expenses: res.data

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import {serverRequestPath} from "./server";
 
 export default class ExpenseTableRow extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ export default class ExpenseTableRow extends Component {
 
     deleteExpense() {
         // axios.delete('https://laravel-react-expense-manager.herokuapp.com/api/expenses/' + this.props.obj.id)
-        axios.delete('http://expense-manage/expenses/' + this.props.obj.id)
+        axios.delete(serverRequestPath + this.props.obj.id)
             .then((res) => {
                 console.log('Expense removed deleted!')
             }).catch((error) => {
