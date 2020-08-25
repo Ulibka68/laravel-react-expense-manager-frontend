@@ -103,7 +103,8 @@ module.exports = function(proxy, allowedHost) {
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy : {
       '/api': {
-        target: 'http://expense-manage/'
+        changeOrigin: true,
+        target: 'http://expense-manager-api/'
       },
     },
     before(app, server) {
